@@ -1,0 +1,17 @@
+{
+  "name": "atom-dictation",
+  "main": "./lib/atom-dictation",
+  "version": "0.0.1",
+  "description": "Talk with Atom",
+  "activationEvents": [
+    "atom-dictation:listen",
+    "atom-dictation:speak"
+  ],
+  "repository": "https://github.com/jugglingnutcase/atom-dictation",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}

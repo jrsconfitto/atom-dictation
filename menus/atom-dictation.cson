@@ -1,0 +1,38 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Listen'
+      'command': 'atom-dictation:listen'
+    }
+    {
+      'label': 'Speak'
+      'command': 'atom-dictation:speak'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Atom Dictation'
+      'submenu': [
+        {
+          'label': 'Listen'
+          'command': 'atom-dictation:listen'
+        }
+      ]
+    ]
+  }
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Atom Dictation'
+      'submenu': [
+        {
+          'label': 'Speak'
+          'command': 'atom-dictation:speak'
+        }
+      ]
+    ]
+  }
+]
