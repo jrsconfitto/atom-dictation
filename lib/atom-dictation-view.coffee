@@ -10,10 +10,6 @@ class AtomDictationView
     @element.classList.add('atom-dictation',  'overlay', 'from-top')
     atom.workspaceView.append(@element)
 
-    # Register command that starts listening for user input
-    atom.commands.add 'atom-workspace', 'atom-dictation:listen': => @listen()
-    # atom.commands.add 'atom-workspace', 'atom-dictation:speak': => @speak()
-
     recognition = new webkitSpeechRecognition()
     recognition.continuous = true
     recognition.interimResults = true
