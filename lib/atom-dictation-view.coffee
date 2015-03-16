@@ -31,18 +31,19 @@ class AtomDictationView
   listen: ->
     console.log 'AtomDictationView is listening!'
 
-    # Create message element
+    # Create message elements
     interimTranscriptElement = document.createElement('div')
-    finalTranscriptElement = document.createElement('div')
-    insertButton = document.createElement('button')
-
-    # insertButton.textContent('Insert into document')
-
+    interimTranscriptElement.classList.add('interim')
     interimTranscriptElement.textContent = ""
+
+    finalTranscriptElement = document.createElement('div')
+    finalTranscriptElement.id = 'final'
+    finalTranscriptElement.classList.add('final')
     finalTranscriptElement.textContent = ""
 
-    interimTranscriptElement.classList.add('interim')
-    finalTranscriptElement.classList.add('final')
+    insertButton = document.createElement('button')
+    insertButton.innerText = "Insert into document"
+    insertButton.onclick = @insertText
 
     @element.appendChild(finalTranscriptElement)
     @element.appendChild(interimTranscriptElement)
