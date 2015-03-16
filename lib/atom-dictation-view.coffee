@@ -59,9 +59,15 @@ class AtomDictationView
     # toggle whether we're listening or not
     listening = not listening
 
-  insertText: ->
+  insertText: =>
     finalTranscriptText = document.getElementById('final').innerText
-    # atom.workspaceView.insertText(finalTranscriptText)
+    if editor = atom.workspace.getActiveTextEditor()
+      # insert whitespace at the end for now
+      editor.insertText(finalTranscriptText + " ")
+
+    # Clear out the final transcript when transferring the text from the
+    # transcript to the editor
+    @finalTranscriptElement.textContent = ""
 
   speechRecognitionResultsReceived: =>
     finalTranscript = ""
