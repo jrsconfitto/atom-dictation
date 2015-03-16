@@ -32,7 +32,6 @@ class AtomDictationView
     #TODO: should be a setting
     recognition.lang = 'en-US'
 
-
   # Returns an object that can be retrieved when package is activated
   serialize: ->
 
