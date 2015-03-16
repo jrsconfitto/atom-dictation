@@ -7,6 +7,6 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.workspace':
+'atom-workspace':
   'ctrl-alt-u': 'atom-dictation:listen'
   'ctrl-alt-shift-u': 'atom-dictation:speak'
