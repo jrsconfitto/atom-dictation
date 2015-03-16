@@ -1,5 +1,3 @@
-# $ = require 'space-pen'
-
 recognition = {}
 speaking = false
 listening = false
