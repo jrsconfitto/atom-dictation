@@ -14,7 +14,7 @@ class AtomDictationView
     recognition.continuous = true
     recognition.interimResults = true
 
-    #todo: should be a setting
+    #TODO: should be a setting
     recognition.lang = 'en-US'
 
   # Returns an object that can be retrieved when package is activated
