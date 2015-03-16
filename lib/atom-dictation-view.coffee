@@ -40,21 +40,24 @@ class AtomDictationView
     @element.remove()
 
   listen: ->
-    console.log 'Dictation is listening!'
-
     if not listening
-      # clear any previous transcripts
+      # Clear out the UI stuff
       @interimTranscriptElement.textContent = ""
       @finalTranscriptElement.textContent = ""
 
-      recognition.onresult = @speechRecognitionResultsReceived
+      if @element.hasAttribute 'hidden'
+        @element.removeAttribute 'hidden'
+
       # Start listening to whatever is dictated
+      recognition.onresult = @speechRecognitionResultsReceived
       recognition.start()
-      console.log "Listening to you!"
 
     else
       recognition.stop()
-      console.log "Done listening to you!"
+
+      # Hide the dictation UI now that we're done listening
+      if @element.parentElement?
+        @element.setAttribute('hidden', '');
 
     # toggle whether we're listening or not
     listening = not listening
