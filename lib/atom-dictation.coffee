@@ -1,17 +1,26 @@
+AtomDictationView = require './atom-dictation-view'
+{CompositeDisposable} = require 'atom'
+
 module.exports =
+  atomDictationView: null
+
   activate: (state) ->
-    console.log "activating..."
-    atom.workspaceView.command "atom-dictation:listen", => @listen()
-    atom.workspaceView.command "atom-dictation:speak", => @speak()
+    @atomDictationView = new AtomDictationView(state.atomDictationViewState)
+
+    # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
+    @subscriptions = new CompositeDisposable
+
+    # Register command that listens to the user's dictation
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-dictation:listen': => @toggleListening()
+
+    # Register command that reads starting from the cursor
+    # @subscriptions.add atom.commands.add 'atom-workspace', 'atom-dictation:speak': => @toggleSpeaking()
 
   deactivate: ->
-    console.log "Deactivate me!"
+    @atomDictationView.destroy()
 
   serialize: ->
-    console.log "Is there anything to serialize here?"
+    atomDictationViewState: @atomDictationView.serialize()
 
-  listen: ->
-    console.log "Listening to you!"
-
-  speak: ->
-    console.log "Speaking to you!"
+  toggleListening: ->
+    @atomDictationView.listen()
