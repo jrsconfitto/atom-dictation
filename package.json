@@ -1,5 +1,5 @@
 {
-  "name": "atom-dictation",
+  "name": "dictation",
   "main": "./lib/atom-dictation",
   "version": "0.0.1",
   "description": "Talk with Atom",
