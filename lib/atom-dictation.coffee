@@ -23,4 +23,4 @@ module.exports =
     atomDictationViewState: @atomDictationView.serialize()
 
   toggleListening: ->
-    @atomDictationView.listen()
+    @atomDictationView.toggleListening()

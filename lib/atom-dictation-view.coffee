@@ -39,7 +39,7 @@ class AtomDictationView
   destroy: ->
     @element.remove()
 
-  listen: ->
+  toggleListening: ->
     if not listening
       # Clear out the UI stuff
       @interimTranscriptElement.textContent = ""
