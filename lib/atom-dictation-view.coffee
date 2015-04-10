@@ -86,22 +86,3 @@ class AtomDictationView
 
     @finalTranscriptElement.textContent += finalTranscript
     @interimTranscriptElement.textContent = interimTranscript
-
-# speak: ->
-#   console.log 'AtomDictationView is speaking!'
-#
-#   if not speaking
-#     console.log "Speaking to you!"
-#   else
-#     console.log "Done speaking to you!"
-#
-#   # Create message element
-#   message = document.createElement('div')
-#   message.textContent = "The AtomDictation package about to speak to you!"
-#   message.classList.add('message')
-#   @element.appendChild(message)
-#
-#   # if @element.parentElement?
-#   #   @element.remove()
-#   # else
-#   #   atom.workspaceView.append(@element)
