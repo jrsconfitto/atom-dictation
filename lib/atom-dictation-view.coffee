@@ -1,9 +1,9 @@
-recognition = {}
-speaking = false
-listening = false
-
 module.exports =
 class AtomDictationView
+  recognition = {}
+  speaking = false
+  listening = false
+
   constructor: (serializeState) ->
     # Create root element
     @element = document.createElement('div')
